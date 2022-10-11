@@ -1,0 +1,111 @@
+<div id="form-registration">
+  <div id="form-registration-close" (click)="closeReg()">
+    <img src="assets/icons/close.svg">
+  </div>
+  <div>
+    <h1 style="margin-bottom: 30px;">Запись</h1>
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="name">Имя</label>
+          <input type="text" class="form-control " id="name" required [(ngModel)]="model.name"
+                 name="name"
+                 #name="ngModel">
+          <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Вы не ввели имя</div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="surname">Фамилия</label>
+          <input type="text" class="form-control " id="surname" required [(ngModel)]="model.surname"
+                 name="surname"
+                 #surname="ngModel">
+          <div [hidden]="surname.valid || surname.pristine" class="alert alert-danger">Вы не ввели фамилию</div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="age">Сколько вам лет?</label>
+          <input type="number" class="form-control " id="age" required [(ngModel)]="model.age"
+                 name="age"
+                 onclick="this.select()"
+                 #age="ngModel">
+          <div [hidden]="age.valid || age.pristine" class="alert alert-danger">Вы не ввели ваш возраст</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Почта</label>
+        <input type="email" class="form-control " id="email" required [(ngModel)]="model.email"
+               name="email"
+               #email="ngModel">
+        <div [hidden]="email.valid || email.pristine" class="alert alert-danger">Вы не ввели почту</div>
+      </div>
+      <div class="form-group">
+        <label for="phone">Телефон</label>
+        <input type="tel" class="form-control " id="phone" required [(ngModel)]="model.phone"
+               name="phone"
+               #phone="ngModel">
+        <div [hidden]="phone.valid || phone.pristine" class="alert alert-danger">Вы не ввели телефон</div>
+      </div>
+      <div class="form-group">
+        <label for="typeContact">Способ связи</label>
+        <select class="form-control " id="typeContact"
+                required
+                [(ngModel)]="model.typeContact" name="typeContact"
+                #typeContact="ngModel">
+          <option [value]="0">Telegram</option>
+          <option [value]="1">WhatsApp</option>
+        </select>
+        <div [hidden]="typeContact.valid || typeContact.pristine" class="alert alert-danger">
+          Вы не выбрали способ связи
+        </div>
+      </div>
+      <div class="form-group" *ngIf="model.typeContact == 0">
+        <label for="tgLogin">Логин Telegram</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="tgLoginPrepend">@</span>
+          </div>
+          <input type="text" class="form-control " id="tgLogin" required [(ngModel)]="model.tgLogin"
+                 name="tgLogin" aria-describedby="tgLoginPrepend"
+                 #tgLogin="ngModel">
+          <div [hidden]="tgLogin.valid || tgLogin.pristine" class="alert alert-danger">Вы не ввели свой логин</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="school">Школа</label>
+        <input type="text" class="form-control " id="school" required [(ngModel)]="model.school"
+               name="school"
+               #school="ngModel">
+        <div [hidden]="school.valid || school.pristine" class="alert alert-danger">Вы не ввели имя</div>
+      </div>
+      <div class="form-group">
+        <label for="studyDirection">Профиль обучения</label>
+        <input type="text" placeholder="Например, СоцГум" class="form-control " id="studyDirection" required
+               [(ngModel)]="model.studyDirection"
+               name="studyDirection"
+               #studyDirection="ngModel">
+        <div [hidden]="studyDirection.valid || studyDirection.pristine" class="alert alert-danger">Вы не ввели профиль
+          обучения
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="subject">Предмет обучения</label>
+        <select class="form-control " id="subject"
+                required
+                [(ngModel)]="model.subject" name="subject"
+                #subject="ngModel">
+          <option *ngFor="let subject of subjects" [value]="subject">{{subject}}</option>
+        </select>
+        <div [hidden]="subject.valid || subject.pristine" class="alert alert-danger">
+          Вы не выбрали предмет
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="goal">Ваша цель</label>
+        <textarea type="text" class="form-control " id="goal" required [(ngModel)]="model.goal"
+                  name="goal"
+                  #goal="ngModel"></textarea>
+        <div [hidden]="goal.valid || goal.pristine" class="alert alert-danger">Вы не ввели вашу цель</div>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid || subjects.length == 0">Готово
+      </button>
+    </form>
+  </div>
+</div>

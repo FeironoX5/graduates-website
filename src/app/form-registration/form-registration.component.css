@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+#form-registration {
+  position: fixed;
+  z-index: 9999;
+  background: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 40px 50px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+#form-registration-close {
+  background: #000;
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  border-radius: 11px;
+  cursor: pointer;
+}
+
+#form-registration-close img {
+  width: 40px;
+  height: 40px;
+  margin-left: calc((90px - 40px) / 2);
+  margin-top: calc((90px - 40px) / 2);
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 70px;
+}
+
+label {
+  font-weight: 500;
+}
+
+select {
+  cursor: pointer;
+}
+textarea {
+  resize: vertical;
+}

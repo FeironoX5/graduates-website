@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://unpkg.com/bootstrap@4.0.0/dist/css/bootstrap.min.css');
+
+@font-face {
+  font-family: "TT Letovo";
+  src: url('assets/fonts/TT Letovo Black.ttf');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "TT Letovo";
+  src: url('assets/fonts/TT Letovo ExtraBold.ttf');
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "TT Letovo";
+  src: url('assets/fonts/TT Letovo Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "TT Letovo";
+  src: url('assets/fonts/TT Letovo DemiBold.ttf');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "TT Letovo";
+  src: url('assets/fonts/TT Letovo Medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "TT Letovo";
+  src: url('assets/fonts/TT Letovo Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "TT Letovo";
+  src: url('assets/fonts/TT Letovo Light.ttf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "TT Letovo";
+  src: url('assets/fonts/TT Letovo Thin.ttf');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Georgia";
+  src: url('assets/fonts/Georgia.ttf');
+}
+
+* {
+  font-family: "TT Letovo", sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: 0.1s;
+  vertical-align: top;
+  box-sizing: content-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.overlay:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
